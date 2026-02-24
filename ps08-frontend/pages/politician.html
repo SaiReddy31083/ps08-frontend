@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politician Dashboard | FSAD-PS08</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>📊 Politician Dashboard - Analytics</h1>
+            <div>
+                <button onclick="logout()" class="btn btn-back" style="margin-right: 10px;">🚪 Logout</button>
+                <button id="refreshBtn" class="btn btn-primary" onclick="refreshAnalytics()">🔄 Refresh Data</button>
+                <a href="../index.html" class="btn btn-back">← Back to Home</a>
+            </div>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="alertMessage" class="alert"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading analytics data...</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-container" id="statsContainer">
+            <!-- Stats will be populated dynamically -->
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-container">
+            <!-- Pie Chart -->
+            <div class="chart-wrapper">
+                <h3>📈 Category Distribution (Percentage)</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="chart-wrapper">
+                <h3>📊 Issues per Category (Count)</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Detailed Issues Table -->
+        <div class="card">
+            <h2>📋 Detailed Issues Breakdown</h2>
+            <div class="table-container">
+                <table id="issuesTable">
+                    <thead>
+                        <tr>
+                           <th>ID</th>
+                           <th>Title</th>
+                           <th>Category</th>
+                           <th>Votes</th>
+                           <th>Description</th>
+                           <th>Media</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issuesTableBody">
+                        <!-- Issues will be populated here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        // Check if user is logged in and has POLITICIAN role
+        checkRoleAccess('POLITICIAN');
+    </script>
+    <script src="../js/politician.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Dashboard | FSAD-PS08</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>👥 Citizen Dashboard</h1>
+            <div>
+                <button onclick="logout()" class="btn btn-back" style="margin-right: 10px;">🚪 Logout</button>
+                <a href="../index.html" class="btn btn-back">Back to Home</a>
+            </div>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="alertMessage" class="alert"></div>
+
+        <!-- Issue Submission Form -->
+        <div class="card">
+            <h2>📝 Report a New Issue</h2>
+            <form id="issueForm">
+                <div class="form-group">
+                    <label for="title">Issue Title *</label>
+                    <input 
+                        type="text" 
+                        id="title" 
+                        name="title" 
+                        placeholder="Enter a brief title for the issue"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        placeholder="Describe the issue in detail"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="Road">Road</option>
+                        <option value="Water">Water</option>
+                        <option value="Electricity">Electricity</option>
+                        <option value="Sanitation">Sanitation</option>
+                        <option value="Public Safety">Public Safety</option>
+                        <option value="Health">Health</option>
+                        <option value="Education">Education</option>
+                        <option value="Parks">Parks</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Child Safety">Child Safety</option>
+                        <option value="Playgrounds">Playgrounds</option>
+                        <option value="Accessibility">Accessibility</option>
+                        <option value="Air Quality">Air Quality</option>
+                        <option value="Noise Pollution">Noise Pollution</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Image:</label>
+                    <input type="file" id="image">
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Video:</label>
+                    <input type="file" id="video">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Issue</button>
+            </form>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading issues...</p>
+        </div>
+
+        <!-- Issues List -->
+        <div class="card">
+            <h2>📋 All Community Issues</h2>
+            <div class="table-container">
+                <table id="issuesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Votes</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issuesTableBody">
+                        <!-- Issues will be populated here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        // Check if user is logged in and has CITIZEN role
+        checkRoleAccess('CITIZEN');
+    </script>
+    <script src="../js/citizen.js"></script>
+</body>
+</html>

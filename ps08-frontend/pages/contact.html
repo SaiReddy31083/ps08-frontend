@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Citizen–Politician Interaction System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container contact-page">
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <a href="../index.html" class="btn btn-back">← Back to Home</a>
+        </div>
+
+        <section class="contact-hero">
+            <div>
+                <h2>Citizen–Politician Interaction System</h2>
+                <p>We are here to help you connect, report, and engage with your community leaders.</p>
+            </div>
+            <div class="contact-hero-badge">Support Desk</div>
+        </section>
+
+        <div class="contact-grid">
+            <div class="card contact-card">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address *</label>
+                            <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Share your question or concern" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="card contact-card contact-info">
+                <h2>Support Information</h2>
+                <p class="contact-info-lead">Reach our civic support team during office hours for assistance and follow-ups.</p>
+
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <span class="contact-icon">@</span>
+                        <div>
+                            <h3>Support Email</h3>
+                            <p>support@civicconnect.gov</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="contact-icon">TEL</span>
+                        <div>
+                            <h3>Phone Number</h3>
+                            <p>+1 (555) 010-2026</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="contact-icon">LOC</span>
+                        <div>
+                            <h3>Location</h3>
+                            <p>City Hall, 14 Civic Plaza, District 7</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item contact-hours">
+                        <div>
+                            <h3>Office Hours</h3>
+                            <p>Monday – Friday: 9:00 AM – 6:00 PM</p>
+                            <p>Saturday: 10:00 AM – 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>🔐 Login</h1>
+            <a href="../index.html" class="btn btn-back"> Back to Home</a>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="alertMessage" class="alert"></div>
+
+        <!-- Login Form -->
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+            <h2>Welcome Back!</h2>
+            <p style="color: #6c757d; margin-bottom: 25px;">Please login to access your dashboard</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Login
+                </button>
+            </form>
+
+            <p style="text-align: center; margin-top: 20px; color: #6c757d;">
+                Don't have an account? 
+                <a href="signup.html" style="color: #4A90E2; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        // Initialize login form
+        document.getElementById('loginForm').addEventListener('submit', handleLogin);
+    </script>
+</body>
+</html>
